@@ -78,8 +78,8 @@ public class MegStateCommand extends AbstractCommand {
             return;
         }
         IAnimationProperty property = handler instanceof IStateMachineHandler smh
-            ? smh.playAnimation(priority, state, lerpIn.getTicks(), lerpOut.getTicks(), speed, force)
-            : handler.playAnimation(state, lerpIn.getTicks(), lerpOut.getTicks(), speed, force);
+            ? smh.playAnimation(priority, state, lerpIn.getSeconds(), lerpOut.getSeconds(), speed, force)
+            : handler.playAnimation(state, lerpIn.getSeconds(), lerpOut.getSeconds(), speed, force);
         if (property != null) {
             if (loop != null) {
                 property.setForceLoopMode(loop);
